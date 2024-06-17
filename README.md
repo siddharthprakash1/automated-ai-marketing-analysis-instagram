@@ -1,44 +1,44 @@
-# AI Crew for Instagram Post
-## Introduction
-This project is an example using the CrewAI framework to automate the process of coming up with an instagram post. CrewAI orchestrates autonomous AI agents, enabling them to collaborate and execute complex tasks efficiently.
+# Marketing Analysis Project
 
-#### Instagram Post
-[![Instagram Post](https://img.youtube.com/vi/lcD0nT8IVTg/0.jpg)](https://www.youtube.com/watch?v=lcD0nT8IVTg "Instagram Post")
+This project utilizes the CrewAI framework, Groq Cloud, Serper, and the Llama3 language model to conduct marketing analysis and generate creative content for Instagram campaigns.
 
-By [@joaomdmoura](https://x.com/joaomdmoura)
+## Overview
 
-- [CrewAI Framework](#crewai-framework)
-- [Running the script](#running-the-script)
-- [Details & Explanation](#details--explanation)
-- [Using Local Models with Ollama](#using-local-models-with-ollama)
-- [License](#license)
+The project consists of several agents and tasks designed to perform various marketing-related activities, such as product and competitor analysis, campaign strategy development, ad copy creation, and image generation.
 
-## CrewAI Framework
-CrewAI is designed to facilitate the collaboration of role-playing AI agents. In this example, these agents work together to give a complete stock analysis and investment recommendation
+## Agents
 
-## Running the Script
-This example uses OpenHermes 2.5 through Ollama by default so you should to download [Ollama](ollama.ai) and [OpenHermes](https://ollama.ai/library/openhermes).
+The following agents are defined in the `agents.py` file:
 
-You can change the model by changing the `MODEL` env var in the `.env` file.
+1. **Product Competitor Agent**: Analyzes the given product website and identifies unique features, benefits, and the overall narrative.
+2. **Strategy Planner Agent**: Synthesizes insights from product analysis to formulate marketing strategies.
+3. **Creative Content Creator Agent**: Develops compelling and innovative content for social media campaigns, with a focus on creating high-impact Instagram ad copies.
+4. **Senior Photographer Agent**: Generates descriptions for amazing photographs to be used in Instagram ads, capturing emotions and conveying a compelling message.
+5. **Chief Creative Director Agent**: Reviews the work done by the team, ensures alignment with the product's goals, and delegates follow-up work if necessary.
 
-- **Configure Environment**: Copy ``.env.example` and set up the environment variables for [Browseless](https://www.browserless.io/), [Serper](https://serper.dev/).
-- **Install Dependencies**: Run `poetry install --no-root`.
-- **Execute the Script**: Run `python main.py` and input your idea.
+## Tasks
 
-## Details & Explanation
-- **Running the Script**: Execute `python main.py`` and input your idea when prompted. The script will leverage the CrewAI framework to process the idea and generate a landing page.
-- **Key Components**:
-  - `./main.py`: Main script file.
-  - `./tasks.py`: Main file with the tasks prompts.
-  - `./agents.py`: Main file with the agents creation.
-  - `./tools/`: Contains tool classes used by the agents.
+The `tasks.py` file defines the following tasks:
 
-## Using Local Models with Ollama
-This example run enterily local models, the CrewAI framework supports integration with both closed and local models, by using tools such as Ollama, for enhanced flexibility and customization. This allows you to utilize your own models, which can be particularly useful for specialized tasks or data privacy concerns.
+1. **Product Analysis**: Analyzes the given product website and identifies key selling points, market appeal, and suggestions for enhancement or positioning.
+2. **Competitor Analysis**: Explores competitors of the given product website, analyzes their strategies, market positioning, and customer perception.
+3. **Campaign Development**: Creates a targeted marketing campaign strategy and creative content ideas based on the product details.
+4. **Instagram Ad Copy**: Crafts engaging Instagram post copies that resonate with the target audience and highlight the product's unique selling points.
+5. **Take Photograph Task**: Generates descriptions for amazing photographs to be used in Instagram ads, capturing emotions and conveying a compelling message.
+6. **Review Photo**: Reviews the generated photograph descriptions, ensures alignment with the product's goals, and delegates follow-up work if necessary.
 
-### Setting Up Ollama
-- **Install Ollama**: Ensure that Ollama is properly installed in your environment. Follow the installation guide provided by Ollama for detailed instructions.
-- **Configure Ollama**: Set up Ollama to work with your local model. You will probably need to [tweak the model using a Modelfile](https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md), I'd recommend playing with `top_p` and `temperature`.
+## Tools
 
-## License
-This project is released under the MIT License.
+The `tools.py` file contains the `SearchTools` class, which provides two tools for searching the internet and Instagram using the Serper API.
+
+## Usage
+
+The `main.py` file orchestrates the agents and tasks to generate an Instagram ad copy and a description for a compelling photograph. The results are printed at the end of the execution.
+
+## Generated Content
+
+Your post copy:
+[Generated Ad Copy]
+
+Your midjourney description:
+[Generated Image]
